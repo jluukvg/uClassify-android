@@ -2,7 +2,6 @@ package com.jluukvg.uclassify;
 
 import com.jluukvg.uclassify.data.DataManager;
 import com.jluukvg.uclassify.di.component.ApplicationComponent;
-import com.jluukvg.uclassify.di.component.DaggerApplicationComponent;
 import com.jluukvg.uclassify.di.module.ApplicationModule;
 
 import android.app.Application;

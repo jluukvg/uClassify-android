@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">uclassify-android</string>
+
+    <string name="some_error">Oops! some error occured!</string>
 </resources>
