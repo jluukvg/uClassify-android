@@ -1,8 +1,6 @@
 package com.jluukvg.uclassify.ui.main;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.jluukvg.uclassify.R;
@@ -30,9 +28,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
         ButterKnife.bind(this);
 
-        //editText.setText("This is a ButterKnife test.");
-
-        //presenter.onAttach(this);
+        presenter.onAttach(this);
     }
 
     @Override

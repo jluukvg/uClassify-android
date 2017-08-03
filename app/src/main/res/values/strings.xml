@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">uclassify-android</string>
+    <string name="app_name">uClassify</string>
 
-    <string name="some_error">Oops! some error occured!</string>
+    <!--Messages-->
+    <string name="input_prompt">Write some text to be classified into a Topic!</string>
+    <string name="some_error">Oops! some error occurred!</string>
 </resources>

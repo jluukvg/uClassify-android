@@ -1,17 +1,19 @@
 package com.jluukvg.uclassify.di.module;
 
+import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
+
 import com.jluukvg.uclassify.di.ActivityContext;
 import com.jluukvg.uclassify.di.PerActivity;
 import com.jluukvg.uclassify.ui.main.MainMvpPresenter;
 import com.jluukvg.uclassify.ui.main.MainMvpView;
+import com.jluukvg.uclassify.ui.main.MainPresenter;
 import com.jluukvg.uclassify.ui.results.ResultsMvpPresenter;
 import com.jluukvg.uclassify.ui.results.ResultsMvpView;
+import com.jluukvg.uclassify.ui.results.ResultsPresenter;
 import com.jluukvg.uclassify.ui.splash.SplashMvpPresenter;
 import com.jluukvg.uclassify.ui.splash.SplashMvpView;
 import com.jluukvg.uclassify.ui.splash.SplashPresenter;
-
-import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 
 import dagger.Module;
 import dagger.Provides;
@@ -44,16 +46,15 @@ public class ActivityModule {
 
     @Provides
     @PerActivity
-    MainMvpPresenter<MainMvpView> provideMainPresenter(MainMvpPresenter<MainMvpView> presenter) {
+    MainMvpPresenter<MainMvpView> provideMainPresenter(MainPresenter<MainMvpView> presenter) {
         return presenter;
     }
 
     @Provides
     @PerActivity
-    ResultsMvpPresenter<ResultsMvpView> provideResultsPresenter(ResultsMvpPresenter<ResultsMvpView> presenter) {
+    ResultsMvpPresenter<ResultsMvpView> provideResultsPresenter(ResultsPresenter<ResultsMvpView> presenter) {
         return presenter;
     }
-
 
 
 }
