@@ -1,5 +1,7 @@
 package com.jluukvg.uclassify.data;
 
-public interface DataManager {
+import com.jluukvg.uclassify.data.prefs.PreferencesHelper;
+
+public interface DataManager extends PreferencesHelper{
 
 }
