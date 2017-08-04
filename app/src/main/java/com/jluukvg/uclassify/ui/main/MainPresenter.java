@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 /**
  * Created by jluukvg on 8/2/17.
+ *
  */
 
 public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> implements MainMvpPresenter<V> {

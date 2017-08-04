@@ -4,6 +4,7 @@ import android.support.annotation.StringRes;
 
 /**
  * Created by jluukvg on 8/2/17.
+ *
  */
 
 public interface MvpView {

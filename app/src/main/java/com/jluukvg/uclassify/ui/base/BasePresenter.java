@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 /**
  * Created by jluukvg on 8/2/17.
+ *
  */
 
 public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
@@ -33,6 +34,10 @@ public class BasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     public boolean isViewAttached() {
         return mvpView != null;
+    }
+
+    public V getMvpView() {
+        return mvpView;
     }
 
     public DataManager getDataManager() {

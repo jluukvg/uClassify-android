@@ -1,10 +1,5 @@
 package com.jluukvg.uclassify.data.network.model;
 
-/**
- * Created by jluukvg on 8/2/17.
- *
- */
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

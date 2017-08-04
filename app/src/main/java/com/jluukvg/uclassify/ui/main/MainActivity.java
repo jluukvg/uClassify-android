@@ -1,5 +1,7 @@
 package com.jluukvg.uclassify.ui.main;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 
@@ -18,6 +20,10 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     @BindView(R.id.editText)
     EditText editText;
+
+    public static Intent getStartIntent(Context context) {
+        return new Intent(context, MainActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

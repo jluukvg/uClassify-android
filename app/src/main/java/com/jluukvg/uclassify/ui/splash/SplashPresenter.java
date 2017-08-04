@@ -16,4 +16,10 @@ public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V> i
     public SplashPresenter(DataManager dataManager) {
         super(dataManager);
     }
+
+    @Override
+    public void onAttach(V mvpView) {
+        super.onAttach(mvpView);
+        getMvpView().openMainActivity();
+    }
 }

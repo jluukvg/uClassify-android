@@ -5,6 +5,7 @@ import com.jluukvg.uclassify.ui.base.MvpPresenter;
 
 /**
  * Created by jluukvg on 8/2/17.
+ *
  */
 
 @PerActivity
