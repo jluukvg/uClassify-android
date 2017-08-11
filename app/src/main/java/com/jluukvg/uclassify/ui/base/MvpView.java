@@ -17,4 +17,8 @@ public interface MvpView {
 
     void showMessage(@StringRes int resId);
 
+    void showLoading();
+
+    void hideLoading();
+
 }

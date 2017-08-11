@@ -22,4 +22,7 @@ public class AppDataManager implements DataManager {
         this.preferencesHelper = preferencesHelper;
     }
 
+    @Override
+    public void doApiCall() {
+    }
 }

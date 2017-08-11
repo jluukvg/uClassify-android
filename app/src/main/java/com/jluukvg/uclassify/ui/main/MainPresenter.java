@@ -3,6 +3,8 @@ package com.jluukvg.uclassify.ui.main;
 import com.jluukvg.uclassify.data.DataManager;
 import com.jluukvg.uclassify.ui.base.BasePresenter;
 
+import android.util.Log;
+
 import javax.inject.Inject;
 
 /**
@@ -17,6 +19,10 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> imple
         super(dataManager);
     }
 
-
-
+    @Override
+    public void onSubmitButtonClick() {
+        getMvpView().showLoading();
+        String myString = getMvpView().getText();
+        Log.d("myString", myString);
+    }
 }

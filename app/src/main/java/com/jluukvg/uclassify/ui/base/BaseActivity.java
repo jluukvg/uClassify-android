@@ -5,7 +5,9 @@ import com.jluukvg.uclassify.R;
 import com.jluukvg.uclassify.di.component.ActivityComponent;
 import com.jluukvg.uclassify.di.component.DaggerActivityComponent;
 import com.jluukvg.uclassify.di.module.ActivityModule;
+import com.jluukvg.uclassify.utils.CommonUtils;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
@@ -27,6 +29,8 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
 
     private ActivityComponent activityComponent;
     private Unbinder unBinder;
+
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -79,6 +83,19 @@ public abstract class BaseActivity extends AppCompatActivity implements MvpView 
 
     public void setUnBinder(Unbinder unBinder) {
         this.unBinder = unBinder;
+    }
+
+    @Override
+    public void showLoading() {
+        hideLoading();
+        progressDialog = CommonUtils.showLoadingDialog(this);
+    }
+
+    @Override
+    public void hideLoading() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.cancel();
+        }
     }
 
     @Override
