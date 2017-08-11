@@ -8,6 +8,7 @@ import android.widget.EditText;
 
 import com.jluukvg.uclassify.R;
 import com.jluukvg.uclassify.ui.base.BaseActivity;
+import com.jluukvg.uclassify.ui.results.ResultsActivity;
 
 import javax.inject.Inject;
 
@@ -47,6 +48,12 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @Override
     public String getText() {
         return editText.getText().toString();
+    }
+
+    @Override
+    public void openResultsActivity() {
+        startActivity(ResultsActivity.getStartIntent(this));
+        finish();
     }
 
     @Override

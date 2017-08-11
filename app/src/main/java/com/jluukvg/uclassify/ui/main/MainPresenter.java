@@ -24,5 +24,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> imple
         getMvpView().showLoading();
         String myString = getMvpView().getText();
         Log.d("myString", myString);
+        // Do the network call and wait for an answer, then do next line
+        getMvpView().openResultsActivity();
     }
 }

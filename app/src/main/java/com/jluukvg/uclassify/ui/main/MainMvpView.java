@@ -10,4 +10,6 @@ import com.jluukvg.uclassify.ui.base.MvpView;
 public interface MainMvpView extends MvpView {
 
     String getText();
+
+    void openResultsActivity();
 }
