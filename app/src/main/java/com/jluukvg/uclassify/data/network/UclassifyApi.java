@@ -8,7 +8,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-public interface uClassifyApi {
+public interface UclassifyApi {
 
     @Headers("Content-Type: application/json")
     @POST("{username}/{classifierName}/classify")
