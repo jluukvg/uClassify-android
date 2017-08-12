@@ -1,4 +1,4 @@
-package com.jluukvg.uclassify.data.network.model;
+package com.jluukvg.uclassify.data.memory.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

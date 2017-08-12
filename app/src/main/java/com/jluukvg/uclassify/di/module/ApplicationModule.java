@@ -2,6 +2,8 @@ package com.jluukvg.uclassify.di.module;
 
 import com.jluukvg.uclassify.data.AppDataManager;
 import com.jluukvg.uclassify.data.DataManager;
+import com.jluukvg.uclassify.data.memory.AppMemoryHelper;
+import com.jluukvg.uclassify.data.memory.MemoryHelper;
 import com.jluukvg.uclassify.data.prefs.AppPreferencesHelper;
 import com.jluukvg.uclassify.data.prefs.PreferencesHelper;
 import com.jluukvg.uclassify.di.ApiInfo;
@@ -53,6 +55,12 @@ public class ApplicationModule {
     @Singleton
     DataManager provideDataManager(AppDataManager appDataManager) {
         return appDataManager;
+    }
+
+    @Provides
+    @Singleton
+    MemoryHelper provideDbHelper(AppMemoryHelper appMemoryHelper) {
+        return appMemoryHelper;
     }
 
     @Provides
