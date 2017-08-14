@@ -1,9 +1,11 @@
 package com.jluukvg.uclassify.data.memory.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+import com.jluukvg.uclassify.data.network.model.Classification;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 /**
  * Created by jluukvg on 8/12/17.
@@ -12,16 +14,22 @@ import java.util.List;
 
 public class ClassificationResults {
 
-    @SerializedName("classification")
-    @Expose
-    private List<Classification> classification = null;
+    private ArrayList<Classification> classificationResults = new ArrayList<>();
 
-    public List<Classification> getClassification() {
-        return classification;
+    @Inject
+    public ClassificationResults() {
     }
 
-    public void setClassification(List<Classification> classification) {
-        this.classification = classification;
+    public List<Classification> getClassificationResults() {
+        return classificationResults;
+    }
+
+    public void setClassificationResults(ArrayList<Classification> classificationResults) {
+        this.classificationResults = classificationResults;
+    }
+
+    public void addTopicToClassification(Classification topic) {
+        classificationResults.add(topic);
     }
 
     @Override
@@ -31,18 +39,18 @@ public class ClassificationResults {
 
         ClassificationResults that = (ClassificationResults) o;
 
-        return classification != null ? classification.equals(that.classification) : that.classification == null;
+        return classificationResults != null ? classificationResults.equals(that.classificationResults) : that.classificationResults == null;
     }
 
     @Override
     public int hashCode() {
-        return classification != null ? classification.hashCode() : 0;
+        return classificationResults != null ? classificationResults.hashCode() : 0;
     }
 
     @Override
     public String toString() {
         return "ClassificationResults{" +
-                "classification=" + classification +
+                "classificationResults=" + classificationResults +
                 '}';
     }
 }

@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.jluukvg.uclassify.data.DataManager;
+import com.jluukvg.uclassify.data.memory.model.ClassificationResults;
 import com.jluukvg.uclassify.data.network.UclassifyApi;
 import com.jluukvg.uclassify.data.network.model.ClassifierResponse;
 import com.jluukvg.uclassify.data.network.model.ClassifyTask;
@@ -53,6 +54,8 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> imple
                     ClassifierResponse classifierResponse;
                     if (classifierResponseArray != null && classifierResponseArray.size() >= 1) {
                         classifierResponse = classifierResponseArray.get(0);
+                        ClassificationResults classificationResults = classifierResponse.getClassification();
+                        getDataManager().saveClassificationResults(classificationResults);
                         Log.d("OkHttp:", classifierResponse.toString());
                         getMvpView().openResultsActivity();
                     }
@@ -61,6 +64,7 @@ public class MainPresenter<V extends MainMvpView> extends BasePresenter<V> imple
 
             @Override
             public void onFailure(@NonNull Call<ArrayList<ClassifierResponse>> call, @NonNull Throwable t) {
+                Log.d("OkHttp:", t.toString());
             }
         });
     }

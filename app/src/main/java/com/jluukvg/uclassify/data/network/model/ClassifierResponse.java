@@ -2,11 +2,14 @@ package com.jluukvg.uclassify.data.network.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.jluukvg.uclassify.data.memory.model.Classification;
+import com.jluukvg.uclassify.data.memory.model.ClassificationResults;
 
 import java.util.List;
 
 public class ClassifierResponse {
+
+    //@Inject
+    //ClassificationResults classificationResults;
 
     @SerializedName("textCoverage")
     @Expose
@@ -23,8 +26,15 @@ public class ClassifierResponse {
         this.textCoverage = textCoverage;
     }
 
-    public List<Classification> getClassification() {
-        return classification;
+    public ClassificationResults getClassification() {
+
+        ClassificationResults classificationResults = new ClassificationResults();
+
+        for (int i = 0; i < classification.size(); i++) {
+            classificationResults.addTopicToClassification(classification.get(i));
+        }
+
+        return classificationResults;
     }
 
     public void setClassification(List<Classification> classification) {

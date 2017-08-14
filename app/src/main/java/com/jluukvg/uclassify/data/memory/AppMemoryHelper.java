@@ -11,18 +11,20 @@ import javax.inject.Inject;
 
 public class AppMemoryHelper implements MemoryHelper {
 
-    @Inject
-    public AppMemoryHelper() {
+    private ClassificationResults classificationResults;
 
+    @Inject
+    public AppMemoryHelper(ClassificationResults classificationResults) {
+        this.classificationResults = classificationResults;
     }
 
     @Override
     public ClassificationResults getClassificationResults() {
-        return new ClassificationResults();
+        return classificationResults;
     }
 
     @Override
     public void saveClassificationResults(ClassificationResults classificationResults) {
-
+        this.classificationResults = classificationResults;
     }
 }
